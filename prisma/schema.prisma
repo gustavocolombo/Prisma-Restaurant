@@ -13,10 +13,22 @@ datasource db {
 model User {
   id String @id @default(uuid())
   name String 
-  email String 
+  email String @unique
   password String
   telephone String
   dateBirthday DateTime
 
   @@map("users")
+}
+
+model Restaurant{
+  id String @id @default(uuid())
+  name String 
+  latitude Float
+  longitude Float
+  telephone String
+  email String @unique
+  password String
+
+  @@map("restaurants")
 }
